@@ -1,0 +1,46 @@
+.sidebar {
+  width: 30%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  background: $blue-color;
+  @media screen and (max-width: 768px){
+    & {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+// scss for components Rating and UserList, ro reduce amount of scss files
+.rating {
+  &__header {
+    color: $white-color;
+  }
+  &__item {
+    color: $background;
+    font-size: 16px;
+    margin: 10px 0;
+    display: block;
+  }
+  &__list {
+    padding-left: 10px;
+  }
+}
+
+.user-list, rating {
+  margin-bottom: 40px;
+  &__header {
+    color: $white-color;
+    margin-top: 0;
+  }
+  &__item {
+    color: $background;
+    font-size: 16px;
+    margin: 10px 0;
+    display: block;
+  }
+  &__list {
+    padding-left: 10px;
+  }
+}
