@@ -1,9 +1,7 @@
 import * as moment from 'moment'
-import * as types from '../store/actionTypes';
-import { addUser, messageReceived, usersList } from '../store/actions';
+import { messageReceived } from '../store/actions';
 
 const setupSocket = (dispatch, username) => {
-  // create connection to web-socket server
   const socket = new WebSocket('wss://wssproxy.herokuapp.com');
 
   socket.onopen = () => {
@@ -18,23 +16,7 @@ const setupSocket = (dispatch, username) => {
     const data = JSON.parse(event.data);
     console.log(data)
     console.log(`${moment(data[0].time).format('llll')} ${data[0].from}:${data[0].message}`)
-    /* data.forEach((element) => {
-      console.log(moment(element.time).format('llll'))
-    }) */
     dispatch(messageReceived(data[0].id, data[0].time, data[0].from, data[0].message))
-    /* switch (data.type) {
-      case types.ADD_MESSAGE:
-        dispatch(messageReceived(data.message, data.from));
-        break
-      case types.ADD_USER:
-        dispatch(addUser(data.name));
-        break
-      case types.USERS_LIST:
-        dispatch(usersList(data.users));
-        break
-      default:
-        break
-    } */
   }
 
   socket.onclose = (event) => {

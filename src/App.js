@@ -10,11 +10,11 @@ class App extends Component {
     return (
       <div className="app">
         <Login dispatch={this.props.dispatch} saga={this.props.saga} />
+        <Sidebar/>
         <div className='app__chatbox'>
           <Chat/>
           <AddNewMessage/>
         </div>
-        <Sidebar/>
       </div>
     );
   }

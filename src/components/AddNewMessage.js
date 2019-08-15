@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class AddNewMessage extends Component {
-  ws = new WebSocket('wss://wssproxy.herokuapp.com')
-  sendMessage = (e) => {
-    const {props: {addMessage, name}} = this;
+  ws = new WebSocket('wss://wssproxy.herokuapp.com');
+  sendMessage = e => {
+    const {
+      props: { addMessage, name }
+    } = this;
     if (e.key === 'Enter' || e.type === 'click') {
-     /*  addMessage(this.input.value, name); */
-      this.ws.send(
-        JSON.stringify({ from: name, message: this.input.value })
-      );
-      this.input.value = ''
+      /*  addMessage(this.input.value, name); */
+      this.input.value === '' ?  alert("Enter message!") : this.ws.send(JSON.stringify({ from: name, message: this.input.value}))
+     // this.ws.send(JSON.stringify({ from: name, message: this.input.value === '' ?  this.input.value = 'Hi' : this.input.value}));
+      this.input.value = '';
     }
-  }
+  };
 
   render() {
     return (
@@ -22,12 +23,11 @@ class AddNewMessage extends Component {
           onKeyPress={this.sendMessage}
           type='text'
           placeholder='Enter message...'
-          ref = {(node) => {this.input = node}}
+          ref={node => {
+            this.input = node;
+          }}
         />
-        <button
-          className='new-message__button'
-          onClick={this.sendMessage}
-        >
+        <button className='new-message__button' onClick={this.sendMessage}>
           Send
         </button>
       </div>
@@ -37,6 +37,6 @@ class AddNewMessage extends Component {
 
 AddNewMessage.propTypes = {
   addMessage: PropTypes.func.isRequired
-}
+};
 
 export default AddNewMessage;

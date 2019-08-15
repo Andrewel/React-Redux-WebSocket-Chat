@@ -22,6 +22,9 @@
   position: relative;
   box-sizing: border-box;
   width: calc(50% - 10px);
+  height: inherit;
+  word-wrap: break-word;
+  font-size: 15px;
   &__author {
     color: $dark-blue-color;
   }
@@ -50,6 +53,9 @@
   left: 55%;
   box-sizing: border-box;
   width: calc(45% - 10px);
+  height: inherit;
+  word-wrap: break-word;
+  font-size: 15px;
   &__author {
     color: green;
   }

@@ -25,7 +25,7 @@ class Rating extends Component {
 
     return (
       <div className="rating">
-        <h3 className="rating__header">Рейтинг по количеству сообщений:</h3>
+        <h3 className="rating__header">Messages:</h3>
         <ul className='rating__list'>
           {sorted.map(user => (
             <span className='rating__item' key={user[0]}>

@@ -3,8 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Message = ({time, from, message}) => {
-  let m = 'message'
-  from === localStorage.getItem('Username') ? m = 'message2' : console.log('bad')
+  let m
+  from === localStorage.getItem('Username') ? m = 'message2' : m = 'message'
   return (
     <p className={m}>
       <i className={`${m}__time`}>{moment(time).format('LT')}</i> <i className={`${m}__author`}>{from}</i>: {message}

@@ -18,7 +18,8 @@ class Login extends Component {
       props: { dispatch, addUser, login, saga }
     } = this;
     if (e.key === 'Enter') {
-      const username = this.nameInput.value;
+      let username
+      localStorage.getItem('Username') ? username = localStorage.getItem('Username') : username = this.nameInput.value;
       localStorage.setItem('Username', username);
       this.setState(username ? { showLoginForm: false } : { showError: true });
       if (username) {
