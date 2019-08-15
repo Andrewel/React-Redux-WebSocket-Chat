@@ -1,18 +1,21 @@
+import * as moment from 'moment'
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Message = ({message, author, time}) => {
+const Message = ({time, from, message}) => {
+  let m = 'message'
+  from === localStorage.getItem('Username') ? m = 'message2' : console.log('bad')
   return (
-    <p className='message'>
-      <i className='message__time'>{time}</i> <i className='message__author'>{author}</i>: {message}
-    </p>
+    <p className={m}>
+      <i className={`${m}__time`}>{moment(time).format('LT')}</i> <i className={`${m}__author`}>{from}</i>: {message}
+    </p> 
   )
 }
 
 Message.propTypes = {
   message: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-  time: PropTypes.string.isRequired,
+  from: PropTypes.string.isRequired,
+  time: PropTypes.number.isRequired,
 }
 
 export default Message;

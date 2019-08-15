@@ -7,7 +7,7 @@ import Rating from './Rating'
 const setup = () => {
   const props = {
     users: [{name: 'Я', id: 0}],
-    messages: [{message: 'привет имр', author: 'Я'}],
+    messages: [{message: 'привет имр', from: 'Я'}],
     addUser: jest.fn()
   }
   Enzyme.configure({ adapter: new Adapter() })

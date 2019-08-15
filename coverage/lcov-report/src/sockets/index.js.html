@@ -129,7 +129,7 @@ const setupSocket = <span class="fstat-no" title="function not covered" >(d</spa
     const data = <span class="cstat-no" title="statement not covered" >JSON.parse(event.data);</span>
 <span class="cstat-no" title="statement not covered" >    switch (data.type) {</span>
       case types.ADD_MESSAGE:
-<span class="cstat-no" title="statement not covered" >        dispatch(messageReceived(data.message, data.author));</span>
+<span class="cstat-no" title="statement not covered" >        dispatch(messageReceived(data.message, data.from));</span>
 <span class="cstat-no" title="statement not covered" >        break</span>
       case types.ADD_USER:
 <span class="cstat-no" title="statement not covered" >        dispatch(addUser(data.name));</span>

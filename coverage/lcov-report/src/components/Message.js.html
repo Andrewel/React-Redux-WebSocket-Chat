@@ -80,17 +80,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 import PropTypes from 'prop-types';
 &nbsp;
-const Message = ({message, author, time}) =&gt; {
+const Message = ({message, from, time}) =&gt; {
   return (
     &lt;p className='message'&gt;
-      &lt;i className='message__time'&gt;{time}&lt;/i&gt; &lt;i className='message__author'&gt;{author}&lt;/i&gt;: {message}
+      &lt;i className='message__time'&gt;{time}&lt;/i&gt; &lt;i className='message__author'&gt;{from}&lt;/i&gt;: {message}
     &lt;/p&gt;
   )
 }
 &nbsp;
 Message.propTypes = {
   message: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
+  from: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
 }
 &nbsp;

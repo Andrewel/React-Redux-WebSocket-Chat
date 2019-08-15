@@ -12,7 +12,7 @@ class Chat extends Component {
             <Message
               key={message.id}
               {...message}
-            />
+            /> 
           ))}
         </ul>
       </div>

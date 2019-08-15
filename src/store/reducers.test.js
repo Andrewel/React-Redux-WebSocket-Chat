@@ -10,11 +10,11 @@ describe('Messages reducer', () => {
     expect(messages([], {
       type: types.ADD_MESSAGE,
       message: 'Привет',
-      author: 'Я'
+      from: 'Я'
     })).toEqual([
       {
         message: 'Привет',
-        author: 'Я'
+        from: 'Я'
       }
     ])
 
@@ -22,22 +22,22 @@ describe('Messages reducer', () => {
       [
         {
           message: 'Привет',
-          author: 'Я'
+          from: 'Я'
         }
       ],
       {
         type: types.ADD_MESSAGE,
         message: 'и тебе привет',
-        author: 'Вася'
+        from: 'Вася'
       }
     )).toEqual([
       {
         message: 'Привет',
-        author: 'Я'
+        from: 'Я'
       },
       {
         message: 'и тебе привет',
-        author: 'Вася'
+        from: 'Вася'
       }
     ])
   })

@@ -11,11 +11,11 @@ export function getTime() {
   return time;
 }
 
-export const addMessage = (message, author) => ({
+export const addMessage = (message, from) => ({
   type: types.ADD_MESSAGE,
   id: nextMessageId++,
   message,
-  author,
+  from,
   time: getTime()
 })
 
@@ -25,12 +25,12 @@ export const addUser = name => ({
   name
 })
 
-export const messageReceived = (message, author) => ({
+export const messageReceived = (id, time, from, message) => ({
   type: types.MESSAGE_RECEIVED,
-  id: nextMessageId++,
-  message,
-  author,
-  time: getTime()
+  id,
+  time,
+  from,
+  message
 })
 
 export const usersList = users => ({

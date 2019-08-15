@@ -6,7 +6,7 @@ import Message from './Message'
 
 const setup = () => {
   const props = {
-    author: 'Я',
+    from: 'Я',
     time: '19:00',
     message: 'какой-нибудь текст'
   }

@@ -12,30 +12,30 @@ export function getTime() {
 describe('adding a message', () => {
   it('should create an action to add a message with id 0', () => {
     const message = 'привет, как дела?'
-    const author = 'Петя'
+    const from = 'Петя'
     const action = {
       type: types.ADD_MESSAGE,
       message,
-      author,
+      from,
       time: getTime(),
       id: 0
     }
-    expect(addMessage(message, author)).toEqual(action)
+    expect(addMessage(message, from)).toEqual(action)
   })
 })
 
 describe('adding a second message', () => {
   it('should create an action to add a message with id 1', () => {
     const message = 'Привет всем!'
-    const author = 'Вася'
+    const from = 'Вася'
     const action = {
       type: types.ADD_MESSAGE,
       message,
-      author,
+      from,
       time: getTime(),
       id: 1
     }
-    expect(addMessage(message, author)).toEqual(action)
+    expect(addMessage(message, from)).toEqual(action)
   })
 })
 

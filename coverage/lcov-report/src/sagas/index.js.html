@@ -68,7 +68,7 @@ import * as types from '../store/actionTypes';
 &nbsp;
 const handleNewMessage = function* <span class="fstat-no" title="function not covered" >handleNewMessage(</span>params) {
 <span class="cstat-no" title="statement not covered" >  yield takeEvery(types.ADD_MESSAGE, <span class="fstat-no" title="function not covered" >(a</span>ction) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    action.author = params.username;</span>
+<span class="cstat-no" title="statement not covered" >    action.from = params.username;</span>
 <span class="cstat-no" title="statement not covered" >    params.socket.send(JSON.stringify(action));</span>
   })
 }

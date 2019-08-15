@@ -3,7 +3,7 @@ import * as types from '../store/actionTypes';
 
 const handleNewMessage = function* handleNewMessage(params) {
   yield takeEvery(types.ADD_MESSAGE, (action) => {
-    action.author = params.username;
+    action.from = params.username;
     params.socket.send(JSON.stringify(action));
   })
 }

@@ -142,11 +142,11 @@ export function getTime() {
   return time;
 }
 &nbsp;
-export const addMessage = (message, author) =&gt; ({
+export const addMessage = (message, from) =&gt; ({
   type: types.ADD_MESSAGE,
   id: nextMessageId++,
   message,
-  author,
+  from,
   time: getTime()
 })
 &nbsp;
@@ -156,11 +156,11 @@ export const addUser = name =&gt; ({
   name
 })
 &nbsp;
-export const messageReceived = <span class="fstat-no" title="function not covered" >(m</span>essage, author) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+export const messageReceived = <span class="fstat-no" title="function not covered" >(m</span>essage, from) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
   type: types.MESSAGE_RECEIVED,
   id: nextMessageId++,
   message,
-  author,
+  from,
   time: getTime()
 })
 &nbsp;

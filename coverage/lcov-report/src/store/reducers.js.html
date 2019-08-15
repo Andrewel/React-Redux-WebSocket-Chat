@@ -130,7 +130,7 @@ export function messages(state = [], action) {
       return state.concat([
         {
           message: action.message,
-          author: action.author,
+          from: action.from,
           id: action.id,
           time: action.time,
         }

@@ -8,7 +8,7 @@ class Rating extends Component {
     users.forEach(user => {
       let count = 0;
       messages.forEach(mes => {
-        if (mes.author.toString() === user.name.toString()) {
+        if (mes.from.toString() === user.name.toString()) {
           count++
           rating[user.name] = count;
         }

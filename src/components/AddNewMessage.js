@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class AddNewMessage extends Component {
+  ws = new WebSocket('wss://wssproxy.herokuapp.com')
   sendMessage = (e) => {
     const {props: {addMessage, name}} = this;
     if (e.key === 'Enter' || e.type === 'click') {
-      addMessage(this.input.value, name);
+     /*  addMessage(this.input.value, name); */
+      this.ws.send(
+        JSON.stringify({ from: name, message: this.input.value })
+      );
       this.input.value = ''
     }
   }
@@ -17,14 +21,14 @@ class AddNewMessage extends Component {
           className='new-message__input'
           onKeyPress={this.sendMessage}
           type='text'
-          placeholder='Введите сообщение'
+          placeholder='Enter message...'
           ref = {(node) => {this.input = node}}
         />
         <button
           className='new-message__button'
           onClick={this.sendMessage}
         >
-          Отправить
+          Send
         </button>
       </div>
     );

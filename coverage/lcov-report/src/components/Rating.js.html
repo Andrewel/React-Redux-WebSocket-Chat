@@ -133,7 +133,7 @@ class Rating extends Component {
     users.forEach(user =&gt; {
       let count = 0;
       messages.forEach(mes =&gt; {
-        <span class="missing-if-branch" title="else path not taken" >E</span>if (mes.author.toString() === user.name.toString()) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (mes.from.toString() === user.name.toString()) {
           count++
           rating[user.name] = count;
         }
