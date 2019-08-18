@@ -3,11 +3,11 @@ import AddNewMessageComponent from '../components/AddNewMessage'
 import { addMessage } from "../store/actions";
 
 const mapDispatchToProps = dispatch => ({
-  addMessage: (message, from) => {
-    dispatch(addMessage(message, from));
+  addMessage: (from, message) => {
+    dispatch(addMessage(from, message));
   }
 })
 
 export const AddNewMessage = connect(state => ({
-  name: state.login
+  name: state.login,
 }), mapDispatchToProps)(AddNewMessageComponent)

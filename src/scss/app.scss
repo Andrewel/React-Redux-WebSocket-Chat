@@ -1,4 +1,4 @@
-@import "variables.scss";
+
 @import "chat.scss";
 @import "sidebar.scss";
 @import "add-new-message";
@@ -30,7 +30,7 @@ body {
     height: 100%;
     box-sizing: border-box;
     padding: 20px 20px 0 20px;
-    background: $background;
+    background: #eee;
     @media screen and (max-width: 768px){
       & {
         width: 100%;

@@ -5,26 +5,38 @@
   right: 0;
   bottom: 0;
   z-index: 10;
-  background: $white-color;
+  background: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  &__header {
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
   &__input {
-    width: 240px;
+    width: 15vw;
     border: none;
-    border-bottom: 3px solid $blue-color;
+    border-bottom: 2px solid rgba(0,0,0,0.6);
     outline: none;
     font-size: 16px;
     padding: 5px;
   }
   &__error {
-    color: $error-color;
+    color: #ff3d77;
     margin-top: 10px;
+  }
+  &__button{
+    width: 10vw;
+    height: 3vw;
+    margin: 2vw;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    border-width: 0;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 7px #000000;
+    background-color: #201db8;
+    color: #ffffff;
   }
 }

@@ -7,7 +7,7 @@ class UserList extends Component {
 
     return (
       <div className='user-list'>
-        <h3 className='user-list__header'>List of users:</h3>
+        <h3 className='user-list__header'>User:</h3>
         <ul className='user-list__list'>
           {users.map(user => (
             <span className='user-list__item' key={user.id}>{user.name}</span>

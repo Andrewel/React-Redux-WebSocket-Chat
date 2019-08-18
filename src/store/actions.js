@@ -1,22 +1,11 @@
-import * as types from './actionTypes';
+import * as types from '../constants/actionTypes';
 
-let nextMessageId = 0;
 let nextUserId = 0;
 
-export function getTime() {
-  let date = new Date();
-  let time = [date.getHours(), date.getMinutes()].map(x => {
-    return x < 10 ? `0${x}` : x
-  }).join(':');
-  return time;
-}
-
-export const addMessage = (message, from) => ({
+export const addMessage = (from, message) => ({
   type: types.ADD_MESSAGE,
-  id: nextMessageId++,
-  message,
   from,
-  time: getTime()
+  message,
 })
 
 export const addUser = name => ({

@@ -4,10 +4,32 @@
   box-sizing: border-box;
   padding: 20px;
   background: #b30cc2;
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 768px) {
     & {
       width: 100%;
       height: auto;
+    }
+  }
+  &__button {
+    width: 10vw;
+    height: 3vw;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    border-width: 0;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.6);
+    background-color: #2ecc71;
+    color: #ffffff;
+  
+    @media screen and (max-width: 768px) {
+      & {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }
@@ -15,10 +37,10 @@
 // scss for components Rating and UserList, ro reduce amount of scss files
 .rating {
   &__header {
-    color: $white-color;
+    color: #fff;
   }
   &__item {
-    color: $background;
+    color: #eee;
     font-size: 16px;
     margin: 10px 0;
     display: block;
@@ -28,14 +50,16 @@
   }
 }
 
-.user-list, rating {
+.user-list,
+rating {
+  margin-top: 20px;
   margin-bottom: 40px;
   &__header {
-    color: $white-color;
+    color: #fff;
     margin-top: 0;
   }
   &__item {
-    color: $background;
+    color: #eee;
     font-size: 16px;
     margin: 10px 0;
     display: block;

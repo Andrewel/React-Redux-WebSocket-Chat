@@ -30,7 +30,7 @@
     width: calc(100% - 200px);
   }
     &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-      color: $light-grey-color;
+      color: #ccc;
       opacity: 1; /* Firefox */
     }
 
@@ -54,7 +54,7 @@
     border-radius: 5px;
     box-shadow: 0 1px 7px rgba(0, 0, 0, .6);
     background-color: #2ecc71;
-    color: white;
+    color: #ffffff;
 
     @media screen and (max-width: 768px){
       & {

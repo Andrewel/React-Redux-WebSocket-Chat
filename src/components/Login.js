@@ -7,7 +7,6 @@ class Login extends Component {
   constructor() {
     super();
     this.state = {
-      /* showLoginForm: localStorage.getItem('Username') ? false : true, */
       showLoginForm: true,
       showError: false
     };
@@ -17,9 +16,11 @@ class Login extends Component {
     const {
       props: { dispatch, addUser, login, saga }
     } = this;
-    if (e.key === 'Enter') {
-      let username
-      localStorage.getItem('Username') ? username = localStorage.getItem('Username') : username = this.nameInput.value;
+    if (e.key === 'Enter' || e.type === 'click') {
+      let username;
+      localStorage.getItem('Username')
+        ? (username = localStorage.getItem('Username'))
+        : (username = this.nameInput.value);
       localStorage.setItem('Username', username);
       this.setState(username ? { showLoginForm: false } : { showError: true });
       if (username) {
@@ -31,6 +32,7 @@ class Login extends Component {
     }
   };
 
+
   render() {
     const {
       state: { showLoginForm, showError }
@@ -39,17 +41,28 @@ class Login extends Component {
     return (
       <div>
         {showLoginForm ? (
-          <div className='login'>
-            <span className='login__header'>Your Nickname</span>
-            <input
-              onKeyPress={this.login}
-              className='login__input'
-              placeholder='Name'
-              type='text'
-              ref={node => {
-                this.nameInput = node;
-              }}
-            />
+          <div>
+            {localStorage.getItem('Username') ? (
+              <div className='login'>
+                <span className='login__header'>
+                  You logged as <strong>{localStorage.getItem('Username')}</strong>
+                </span>
+                <button className='login__button' onClick={this.login}>LogIn</button>
+              </div>
+            ) : (
+              <div className='login'>
+                <input
+                  onKeyPress={this.login}
+                  className='login__input'
+                  placeholder='Nickname'
+                  type='text'
+                  ref={node => {
+                    this.nameInput = node;
+                  }}
+                />
+              </div>
+            )}
+
             {showError ? (
               <span className='login__error'>Error login</span>
             ) : null}

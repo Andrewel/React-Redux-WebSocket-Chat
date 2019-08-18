@@ -1,8 +1,7 @@
-import * as types from './actionTypes';
+import * as types from '../constants/actionTypes';
 
 export function messages(state = [], action) {
   switch (action.type) {
-    case types.ADD_MESSAGE:
     case types.MESSAGE_RECEIVED:
       return state.concat([
         {

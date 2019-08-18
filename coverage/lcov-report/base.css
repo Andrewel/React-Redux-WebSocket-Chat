@@ -108,7 +108,7 @@ table.coverage td span.cline-any {
     position: relative;
     padding: 0 4px;
     background: #ccc;
-    color: white;
+    color: #ffffff;
 }
 .missing-if-branch .typ, .skip-if-branch .typ {
     color: inherit !important;
@@ -126,7 +126,7 @@ table.coverage td span.cline-any {
 .coverage-summary th {
   text-align: left;
   font-weight: normal;
-  white-space: nowrap;
+  #ffffff-space: nowrap;
 }
 .coverage-summary th.file { border-right: none !important; }
 .coverage-summary th.pct { }
@@ -134,7 +134,7 @@ table.coverage td span.cline-any {
 .coverage-summary th.abs,
 .coverage-summary td.pct,
 .coverage-summary td.abs { text-align: right; }
-.coverage-summary td.file { white-space: nowrap;  }
+.coverage-summary td.file { #ffffff-space: nowrap;  }
 .coverage-summary td.pic { min-width: 120px !important;  }
 .coverage-summary tfoot td { }
 
@@ -188,7 +188,7 @@ span.cline-neutral { background: #eaeaea; }
   line-height: 0;
 }
 .cover-empty {
-    background: white;
+    background: #ffffff;
 }
 .cover-full {
     border-right: none !important;

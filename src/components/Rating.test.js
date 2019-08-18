@@ -6,8 +6,8 @@ import Rating from './Rating'
 
 const setup = () => {
   const props = {
-    users: [{name: 'Я', id: 0}],
-    messages: [{message: 'привет имр', from: 'Я'}],
+    users: [{name: 'AV', id: 0}],
+    messages: [{message: 'message', from: 'AV'}],
     addUser: jest.fn()
   }
   Enzyme.configure({ adapter: new Adapter() })
@@ -30,7 +30,7 @@ describe('Rating', () => {
   it('should count messages for users', () => {
     const { enzymeWrapper } = setup()
     expect(enzymeWrapper.find('.rating__item').html()).toBe(
-      "<span class=\"rating__item\">Я ( 1 )</span>"
+      "<span class=\"rating__item\">AV ( 1 )</span>"
     )
   })
 })
